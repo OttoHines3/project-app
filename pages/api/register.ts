@@ -1,4 +1,4 @@
-import { createJwt, hashPassword } from "@/lib/auth";
+import { createJWT, hashPassword } from "@/lib/auth";
 import { NextApiResponse, NextApiRequest } from "next";
 import { db } from "@/lib/db";
 import { serialize } from "cookie";
@@ -15,7 +15,7 @@ export default async function register(req: NextApiRequest, res: NextApiResponse
             }
         })
 
-        const jwt = await createJwt(user)
+        const jwt = await createJWT(user)
 
         res.setHeader(
             "Set-Cookie",
