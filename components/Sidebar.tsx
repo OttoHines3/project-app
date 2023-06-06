@@ -1,5 +1,5 @@
 import Card from "./Card";
-import SidebarLink from "./SidebarLink";
+import SidebarLink from "@/components/SideBarLink";
 
 const links = [
     { label: "Home", icon: "Grid", link: "/home" },
