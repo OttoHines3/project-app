@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { Suspense } from "react";
 import ProjectCard from "@/components/ProjectCard";
+import TaskCard from "@/components/TaskCard";
 
 const getData = async () => {
     await delay(1000);
@@ -30,7 +31,8 @@ export default async function Page() {
 
   return (
     <div className="h-full overflow-y-auto pr-6 w-full">
-      <div className=" h-full  items-stretch justify-center min-h-[content]">
+      <div className=" h-full  items-stretch justify-center min-h-[content] p-5">
+
         <div className="flex-1 grow flex">
             <Suspense fallback={<GreetingsSkeleton/>}>
                 <Greetings/>
@@ -49,7 +51,7 @@ export default async function Page() {
           <div className="w-1/3 p-3">{/* new project here */}</div>
         </div>
         <div className="mt-6 flex-2 grow w-full flex">
-          <div className="w-full">{/* tasks here */}</div>
+          <div className="w-full"><TaskCard /></div>
         </div>
       </div>
     </div>
